@@ -3,8 +3,8 @@
 ## Build
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
 ## Tagging
-  - docker tag udagram-api-reverseproxy tamnguyen2401/udagram-reverseproxy:v1
+  - docker tag reverseproxy tamnguyen2401/reverseproxy:v1
 ## Push
 ## Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tamnguyen2401/udagram-reverseproxy:v1
+  - docker push tamnguyen2401/reverseproxy:v1
