@@ -1,21 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: uda3-backend-user
+  name: backend-user
   labels:
-    app: uda3-backend-user
+    app: backend-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: uda3-backend-user
+      app: backend-user
   template:
     metadata:
       labels:
-        app: uda3-backend-user
+        app: backend-user
     spec:
       containers:
       - name: udagram-api-user
         image: tamnguyen2401/udagram-api-user:v1
         ports:
         - containerPort: 80
+        env:
+        - name: POSTGRES_HOST
+          value: uda3-postgres.c2auqbexjoq7.us-east-2.rds.amazonaws.com
+        - name: POSTGRES_DB
+          value: postgres
+        - name: AWS_BUCKET
+          value: arn:aws:s3:uda3-microservice-dev
+        - name: AWS_REGION
+          value: us-east-2
+        - name: AWS_PROFILE
+          value: default
+        - name: JWT_SECRET
+          value: testing
+        - name: URL
+          value: URL=http://localhost:8100

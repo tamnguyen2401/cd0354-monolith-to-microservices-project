@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: uda3-env
 data:
-  POSTGRES_HOST: uda3-database.c2auqbexjoq7.us-east-2.rds.amazonaws.com
+  POSTGRES_HOST: uda3-postgres.c2auqbexjoq7.us-east-2.rds.amazonaws.com
   POSTGRES_DB: postgres
   AWS_BUCKET: arn:aws:s3:uda3-microservice-dev
   AWS_REGION: us-east-2
