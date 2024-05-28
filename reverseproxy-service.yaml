@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uda3-reverseproxy
+  labels:
+    run: uda3-reverseproxy
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: uda3-reverseproxy

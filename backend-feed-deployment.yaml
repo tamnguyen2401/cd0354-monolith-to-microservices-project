@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uda3-backend-feed
+  labels:
+    app: uda3-backend-feed
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uda3-backend-feed
+  template:
+    metadata:
+      labels:
+        app: uda3-backend-feed
+    spec:
+      containers:
+      - name: udagram-api-feed
+        image: tamnguyen2401/udagram-api-feed:v1
+        ports:
+        - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uda3-frontend
+  labels:
+    app: uda3-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uda3-frontend
+  template:
+    metadata:
+      labels:
+        app: uda3-frontend
+    spec:
+      containers:
+      - name: udagram-frontend
+        image: tamnguyen2401/udagram-frontend:v1
+        ports:
+        - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uda3-reverseproxy
+  labels:
+    app: uda3-reverseproxy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uda3-reverseproxy
+  template:
+    metadata:
+      labels:
+        app: uda3-reverseproxy
+    spec:
+      containers:
+      - name: udagram-reverseproxy
+        image: tamnguyen2401/reverseproxy:v1
+        ports:
+        - containerPort: 80

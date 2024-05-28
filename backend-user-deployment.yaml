@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uda3-backend-user
+  labels:
+    app: uda3-backend-user
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uda3-backend-user
+  template:
+    metadata:
+      labels:
+        app: uda3-backend-user
+    spec:
+      containers:
+      - name: udagram-api-user
+        image: tamnguyen2401/udagram-api-user:v1
+        ports:
+        - containerPort: 80
