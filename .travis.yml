@@ -16,7 +16,7 @@ before_script:
 
 script:
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend:local tamnguyen2401/udagram-frontend:v2
+  - docker tag udagram-frontend:latest tamnguyen2401/udagram-frontend:v2
   
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
