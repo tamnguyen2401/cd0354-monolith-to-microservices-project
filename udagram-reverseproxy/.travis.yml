@@ -1,10 +1,21 @@
-## Assuming the .travis.yml file is in the project directory, and there is a separate sub-directory for each service
-## Use either `docker-compose` or individual `docker build` commands
-## Build
+language: node_js
+node_js:
+  - 13
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-## Tagging
-  - docker tag reverseproxy tamnguyen2401/reverseproxy:v1
-## Push
-## Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
+  - docker tag udagram-reverseproxy:local tamnguyen2401/udagram-reverseproxy:v2
+after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tamnguyen2401/reverseproxy:v1
+  - docker push tamnguyen2401/udagram-reverseproxy:v2
