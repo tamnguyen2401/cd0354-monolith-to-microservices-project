@@ -44,3 +44,8 @@ set_env.sh
 set_env.bat
 set_env.sh
 screenshots/DockerHub.png
+screenshots/KubectlGetPods.png
+screenshots/KubectlHpa.png
+screenshots/KubectlLogs.png
+screenshots/KubectlServices1.png
+screenshots/KubectlServices2.png

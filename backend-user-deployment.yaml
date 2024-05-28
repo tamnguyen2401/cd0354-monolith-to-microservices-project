@@ -20,6 +20,10 @@ spec:
         ports:
         - containerPort: 80
         env:
+        - name: POSTGRES_USERNAME
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: qwerty123456
         - name: POSTGRES_HOST
           value: uda3-postgres.c2auqbexjoq7.us-east-2.rds.amazonaws.com
         - name: POSTGRES_DB
