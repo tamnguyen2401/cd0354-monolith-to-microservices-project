@@ -12,7 +12,7 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-  - cd udagram-frontend/
+#  - cd udagram-frontend/
 
 script:
   - docker build -t udagram-frontend ./udagram-frontend
