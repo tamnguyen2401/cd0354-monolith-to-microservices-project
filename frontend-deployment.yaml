@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: tamnguyen2401/udagram-frontend:v1
+        image: tamnguyen2401/udagram-frontend:v3
         ports:
         - containerPort: 80
