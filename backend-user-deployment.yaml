@@ -19,6 +19,9 @@ spec:
         image: tamnguyen2401/udagram-api-user:v1
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: "0.5"
         env:
         - name: POSTGRES_USERNAME
           value: postgres
